@@ -14,33 +14,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import InfiniteDoubleSlider from '@/components/InfiniteDoubleSlider';
-
-// Types pour les données
-interface Service {
-  name: string;
-  price: number;
-  logo: string;
-  color: string;
-}
-
-interface FAQ {
-  question: string;
-  answer: string;
-}
-
-interface Review {
-  name: string;
-  rating: number;
-  comment: string;
-  avatar: string;
-}
-
-interface ReassuranceItem {
-  icon: any;
-  text: string;
-  description: string;
-  color: string;
-}
+import { Service, FAQ } from './types/interfaces';
 
 const services: Service[] = [
   { name: 'Netflix Premium', price: 17.99, logo: '🎬', color: 'spliiit-red' },
