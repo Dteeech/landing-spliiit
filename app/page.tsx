@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import OtpForm from "@/components/OtpForm";
 import { ChevronDown, ChevronUp, Play, Star, Shield, Users, Smartphone, Zap, Plus, Minus, ArrowRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
@@ -236,36 +237,9 @@ export default function SpliiitLanding() {
         </div>
       </section>
       {/* Section OTP */}
-      <section id="otp-section" className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-gray-800 mb-6 text-primary">
-            Créez votre compte en 10 secondes
-          </h2>
-          <div className="bg-white p-8 rounded-2xl shadow-lg max-w-md mx-auto hover-lift">
-            <div className="flex mb-4">
-              <select
-                value={countryCode}
-                onChange={(e) => setCountryCode(e.target.value)}
-                className="bg-white border border-gray-300 rounded-l-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-spliiit-brown transition-all"
-              >
-                <option value="+33">🇫🇷 +33</option>
-                <option value="+32">🇧🇪 +32</option>
-                <option value="+41">🇨🇭 +41</option>
-              </select>
-              <input
-                type="tel"
-                placeholder="Numéro de téléphone"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                className="flex-1 border border-gray-300 rounded-r-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-spliiit-brown transition-all"
-              />
-            </div>
-            <button className="w-full bg-gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-              Recevoir mon code
-            </button>
-          </div>
-        </div>
-      </section>
+      <OtpForm />
+
+      {/* Vidéo de présentation */}
 
       {/* Avis Google avec Swiper */}
       <section className="py-20 bg-white">
