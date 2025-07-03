@@ -61,19 +61,17 @@ const config: Config = {
           '5': 'hsl(var(--chart-5))',
         },
         // Palette de couleurs Spliiit
-        spliiit: {
-          pink: '#fb315f',
-          purple: '#7b61ff',
-          brown: '#a77a71',
-          yellow: '#f7c443',
-          blue: '#3a8ef6',
-          green: '#036257',
-          dark: '#121212',
-          black: '#121212', // Alias pour dark
-          red: '#fb315f',   // Alias pour pink
-          spotify: '#1DB954', // Couleur officielle Spotify
-          white: '#ffffff',
-        },
+        'spliiit-pink': '#fb315f',
+        'spliiit-purple': '#7b61ff',
+        'spliiit-brown': '#a77a71',
+        'spliiit-yellow': '#f7c443',
+        'spliiit-blue': '#3a8ef6',
+        'spliiit-green': '#036257',
+        'spliiit-dark': '#121212',
+        'spliiit-black': '#121212', // Alias pour dark
+        'spliiit-red': '#fb315f',   // Alias pour pink
+        'spliiit-spotify': '#1DB954', // Couleur officielle Spotify
+        'spliiit-white': '#ffffff',
       },
       keyframes: {
         'accordion-down': {
