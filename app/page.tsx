@@ -6,7 +6,7 @@ import OtpForm from "@/components/OtpForm";
 import { ChevronDown, ChevronUp, Play, Star, Shield, Users, Smartphone, Zap, Plus, Minus, ArrowRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
-import spliiitVod from '../public/Personnages/Spliiit_SVOD.png'
+
 import groupe from '../public/Personnages/proposer.webp';
 import rejoindre from '../public/Personnages/rejoindre.webp';
 // Import Swiper styles
@@ -15,8 +15,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-coverflow';
 import InfiniteDoubleSlider from '@/components/InfiniteDoubleSlider';
-import { Service, FAQ } from './types/interfaces';
+import { Service, FAQ, Review, ReassuranceItem } from './types/interfaces';
 import Simulator from '@/components/Simulator';
+import CasinoScroll from '@/components/CasinoScroll';
+import Avatars from '@/components/LittleCharacters';
 
 const services: Service[] = [
   { name: 'Netflix Premium', price: 17.99, logo: '🎬', color: 'spliiit-red' },
@@ -120,6 +122,18 @@ const reassuranceItems: ReassuranceItem[] = [
   }
 ];
 
+const slotMachineWords = [
+  'Netflix', 'Disney+', 'Spotify', 'NordVPN', 'Nintendo Switch', 'Microsoft 365',
+  'Le Monde', 'Amazon Prime', 'Apple One', 'Gaia', 'Duolingo', 'YouTube Premium',
+  'Deezer', 'Canva', 'L\'Équipe', 'Dropbox', 'Headspace', 'Crunchyroll',
+  'Tidal', 'Dashlane', 'Antidote', 'Le Figaro', 'Canal+', 'HBO Max',
+  'Apple TV+', 'Apple Music', 'Qobuz', 'Cyber Ghost', 'Bitdefender',
+  'PrimeVideo', 'Bayam', 'Google Play Pass', 'Apple Arcade', 'Setapp',
+  'Proton', 'YNAB', 'Semrush', 'Cafeyn', 'Mediapart', 'Cdiscount',
+  'iCloud', 'Google One', 'Drive', 'Strava', 'Calm', 'Headspace',
+  'Simply', 'Hypnoledge'
+];
+
 export default function SpliiitLanding() {
   const [selectedServices, setSelectedServices] = useState<Service[]>([]);
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -160,109 +174,29 @@ export default function SpliiitLanding() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center bg-black">
-        <div className="max-w-7xl mx-auto px-6 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Content */}
-            <div className="relative z-10">
-              <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
-                Spliiit: Où les
-                <br />
-                <span className="text-white/90">Économies</span>
-                <br />
-                Rencontrent la Simplicité
-              </h1>
+      <section className="relative flex items-center justify-center bg-whitetext-center">
+        <div className=" mx-auto px-6 grid items-center pt-10">
+          {/* Left Content */}
+          <div className="space-y-8 gap-12 text-center p-5">
 
-              <p className="text-xl text-white/80 mb-8 max-w-lg">
-                Le compagnon intelligent qui apprend et s'adapte à vos habitudes de consommation.
+            {/* Main Heading with Slot Machine Effect */}
+            <div className="space-y-4">
+              <h1 className="text-5xl lg:text-6xl font-bold text-spliiit-black leading-tight">
+                
+                <CasinoScroll />
+              </h1>
+              <p className="text-xl text-gray-600 max-w-lg">
+                Économisez sur vos abonnements en rejoignant la plus grande communauté de co-abonnement.
               </p>
 
-              <button
-                onClick={scrollToOTP}
-                className="group inline-flex items-center px-8 py-4 bg-white text-spliiit-pink rounded-full text-lg font-semibold hover:bg-spliiit-pink hover:text-white transition-all duration-300 transform hover:scale-105 shadow-xl"
-              >
-                Commencer maintenant
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-
-            {/* Right Content - 3D Robot/Character */}
-            <div className="relative">
-              <Image src={spliiitVod} alt='image hero split' width={500} height={500} className="w-full h-auto" />
-
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center animate-float">
-                <span className="text-2xl">💰</span>
-              </div>
-              <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center animate-float delay-1000">
-                <span className="text-xl">⚠️</span>
-              </div>
             </div>
           </div>
-        </div>
+          </div>
       </section>
 
-      {/* Logos partenaires avec Swiper */}
-      <section className="py-16 bg-slate-50" >
-        <div className="mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-spliiit-black mb-12 text-primary">
-            Partagez vos services préférés
-          </h2>
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={30}
-            slidesPerView={'auto'}
-            autoplay={{
-              delay: 0,
-              disableOnInteraction: false,
-            }}
-            speed={5000}
-            loop={true}
-            breakpoints={{
-              640: {
-                slidesPerView: 4,
-              },
-              768: {
-                slidesPerView: 6,
-              },
-              1024: {
-                slidesPerView: 8,
-              },
-            }}
-            className="services-swiper"
-          >
-            {services.map((service, index) => {
-              const colorBgClasses = {
-                'spliiit-purple': 'bg-spliiit-purple/20',
-                'spliiit-brown': 'bg-spliiit-brown/20',
-                'spliiit-blue': 'bg-spliiit-blue/20',
-                'spliiit-green': 'bg-spliiit-green/20',
-                'spliiit-yellow': 'bg-spliiit-yellow/20',
-                'spliiit-red': 'bg-spliiit-red/20',
-                'spliiit-spotify': 'bg-spliiit-spotify/20',
-                'spliiit-white': 'bg-spliiit-white/20',
-                'spliiit-black': 'bg-spliiit-dark/20',
-                
-              }[service.color] || 'bg-gray-100';
-
-              return (
-                <SwiperSlide key={index}>
-                  <div className="text-center group cursor-pointer service-logo h-52 ">
-                    <div className={`text-4xl mb-2 group-hover:scale-110 transition-transform duration-300 p-4 ${colorBgClasses} h-full rounded-xl flex flex-col items-center justify-center`}>
-                      {service.logo}
-                      <div className="text-sm text-gray-600 font-medium">{service.name.split(' ')[0]}</div>
-                      <div className="text-xs text-gray-500">{service.price}€/mois</div>
-                    </div>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-      </section>
-
+    <Avatars />
       {/* Section Proposer/Rejoindre + Simulateur */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-10">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-12 text-primary">
             Partagez un abonnement, rejoignez un groupe
@@ -328,7 +262,7 @@ export default function SpliiitLanding() {
       </section>
 
       {/* Slider réassurance avec Swiper */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-10">
         <div className=" mx-auto px-6">
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
@@ -351,12 +285,13 @@ export default function SpliiitLanding() {
             className="reassurance-swiper"
           >
             {reassuranceItems.map((item, index) => {
-              const colorClasses = {
+              const colorClassMap: Record<string, string> = {
                 'spliiit-green': 'bg-spliiit-green/20 text-spliiit-green',
                 'spliiit-brown': 'bg-spliiit-brown/20 text-spliiit-brown',
                 'spliiit-blue': 'bg-spliiit-blue/20 text-spliiit-blue',
                 'spliiit-yellow': 'bg-spliiit-yellow/20 text-spliiit-yellow'
-              }[item.color] || 'bg-gray-100 text-gray-600';
+              };
+              const colorClasses = colorClassMap[item.color] || 'bg-gray-100 text-gray-600';
 
               return (
                 <SwiperSlide key={index}>
@@ -396,7 +331,7 @@ export default function SpliiitLanding() {
                   )}
                 </button>
                 {openFAQ === index && (
-                  <div className="p-6 pt-0 bg-gray-50">
+                  <div className="p-6 pt-0">
                     <p className="text-gray-700">{faq.answer}</p>
                   </div>
                 )}
