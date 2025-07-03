@@ -43,7 +43,7 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    
+
     /* Palette de couleurs Spliiit */
     --spliiit-pink: #fb315f;
     --spliiit-purple: #7b61ff;
@@ -57,6 +57,7 @@
     --spliiit-white: #FFFFFF;
 
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -89,6 +90,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -96,18 +98,24 @@
 
 /* Animations personnalisées */
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(123, 97, 255, 0.3);
   }
+
   50% {
     box-shadow: 0 0 40px rgba(123, 97, 255, 0.6);
   }
@@ -117,9 +125,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -184,9 +194,12 @@ html {
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 1;
   }
+
   50% {
     opacity: .8;
   }
@@ -305,6 +318,7 @@ html {
   0% {
     background-position: -200px 0;
   }
+
   100% {
     background-position: calc(200px + 100%) 0;
   }
@@ -318,6 +332,7 @@ html {
 
 /* Responsive utilities */
 @media (max-width: 768px) {
+
   .swiper-button-next,
   .swiper-button-prev {
     display: none !important;

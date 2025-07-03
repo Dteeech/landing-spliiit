@@ -18,6 +18,7 @@ import { Service, FAQ, Review, ReassuranceItem } from './types/interfaces';
 import Simulator from '@/components/Simulator';
 import CasinoScroll from '@/components/CasinoScroll';
 import Avatars from '@/components/LittleCharacters';
+import { AbonnementSlider } from '@/components/BlackSlider/BlackSlider';
 
 const services: Service[] = [
   { name: 'Netflix Premium', price: 17.99, logo: '🎬', color: 'spliiit-red' },
@@ -194,6 +195,11 @@ export default function SpliiitLanding() {
       </section>
 
     <Avatars />
+    
+    <section>
+      <AbonnementSlider />
+    </section>
+    
       {/* Section Proposer/Rejoindre + Simulateur */}
       <section className="py-10">
         <div className="max-w-6xl mx-auto px-6">
