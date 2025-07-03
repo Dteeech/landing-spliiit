@@ -26,7 +26,7 @@ export default function OnboardingPage() {
       <div className="flex-grow px-4 py-8">
         {step === 1 && <Step1 onNext={handleNext} />}
         {step === 2 && <Step2 onNext={handleNext} onBack={handleBack} />}
-        {step === 3 && <Step3 onNext={handleNext} onBack={handleBack} />}
+        {step === 3 && <Step3 onBack={handleBack} />}
         {/* {step === 4 && <Step4 onNext={handleNext} onBack={handleBack} />}
         {step === 5 && <Step5 onBack={handleBack} />} */}
       </div>
