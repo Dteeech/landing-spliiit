@@ -3,7 +3,7 @@ export interface Service {
     price: number;
     logo: string;
     color: string;
-    category: string;
+    category?: string;
 }
 
 export interface FAQ {
