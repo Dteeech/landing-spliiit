@@ -3,8 +3,9 @@
 import Image from "next/image"
 import { useState } from "react"
 import { toast } from "sonner"
-import persoStep2 from "@/public/images/step2.png"
+import persoStep2 from "@/public/Images/step2.png"
 import svg from "@/public/icons/arrow-back.svg"
+
 type Step2Props = {
   onNext: () => void
   onBack: () => void
