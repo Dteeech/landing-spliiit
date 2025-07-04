@@ -8,7 +8,7 @@ const PrimeCard = () => {
       {/* Top section */}
       <div className="bg-blue-600 h-40 flex items-center justify-center">
         <span className="text-white text-2xl font-bold text-center leading-tight">
-          Prime<br />Premium
+          Prime<br /> Video
         </span>
       </div>
 

@@ -52,11 +52,11 @@ export default function SlotMachine() {
     "Disney+",
     "Spotify",
     "NordVPN",
-    "Nintendo Switch",
+    "Nintendo",
     "Netflix",
     "vos abonnements !"
   ];
-  const itemHeight = 48; // hauteur d'une ligne sans marge
+  const itemHeight = 125; // hauteur d'une ligne sans marge
   const gap = 16; // espace entre les mots (en px)
   const [translateY, setTranslateY] = useState(0);
 
@@ -68,8 +68,8 @@ export default function SlotMachine() {
   }, []);
 
   return (
-    <h1 className="text-5xl font-bold">
-      Économisez le prix de <br />{" "}
+    <h1 className="text-5xl font-bold h-auto">
+      Économisez sur le prix de <br />{" "}
       <span
         className="inline-block overflow-hidden align-bottom"
         style={{ height: `${itemHeight}px` }}
@@ -86,7 +86,7 @@ export default function SlotMachine() {
               key={idx}
               style={{
                 height: `${itemHeight}px`,
-                lineHeight: `${itemHeight}px`,
+                
                 marginBottom: `${idx === items.length - 1 ? 0 : gap}px`, // pas de gap après le dernier
               }}
             >

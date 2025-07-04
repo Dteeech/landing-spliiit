@@ -6,9 +6,10 @@ import OtpForm from "@/components/OtpForm";
 import { ChevronDown, ChevronUp, Play, Star, Shield, Users, Smartphone, Zap, Plus, Minus, ArrowRight } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
-
 import groupe from '../public/Personnages/proposer.webp';
 import rejoindre from '../public/Personnages/rejoindre.webp';
+import vod from '@/public/Personnages/Spliiit_SVOD.png'
+import education from '@/public/Personnages/Spliiit_Education.png'
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -19,7 +20,9 @@ import { Service, FAQ, Review, ReassuranceItem } from './types/interfaces';
 import Simulator from '@/components/Simulator';
 import CasinoScroll from '@/components/CasinoScroll';
 import Avatars from '@/components/LittleCharacters';
+import musique from '@/public/Personnages/Spliiit_Music-V3.png'
 import { AbonnementSlider } from '@/components/BlackSlider/BlackSlider';
+
 
 const services: Service[] = [
   { name: 'Netflix Premium', price: 17.99, logo: '🎬', color: 'spliiit-red' },
@@ -61,38 +64,33 @@ const reviews: Review[] = [
   {
     name: "Marie L.",
     rating: 5,
-    comment: "Super pratique et facile d'utilisation ! J'économise plus de 40€ par mois.",
-    avatar: "👩‍💼"
+    comment: "Super pratique et facile d'utilisation ! J'économise plus de 40€ par mois."
+    
   },
   {
     name: "Thomas K.",
     rating: 5,
-    comment: "J'ai réduit mes dépenses sans effort. L'interface est intuitive.",
-    avatar: "👨‍💻"
+    comment: "J'ai réduit mes dépenses sans effort. L'interface est intuitive."
   },
   {
     name: "Sophie M.",
     rating: 5,
-    comment: "Interface intuitive, je recommande vivement à tous mes amis !",
-    avatar: "👩‍🎨"
+    comment: "Interface intuitive, je recommande vivement à tous mes amis !"
   },
   {
     name: "Paul D.",
     rating: 4,
-    comment: "Économies substantielles chaque mois. Service client réactif.",
-    avatar: "👨‍🔬"
+    comment: "Économies substantielles chaque mois. Service client réactif."
   },
   {
     name: "Emma R.",
     rating: 5,
-    comment: "Parfait pour les étudiants ! Simple et sécurisé.",
-    avatar: "👩‍🎓"
+    comment: "Parfait pour les étudiants ! Simple et sécurisé."
   },
   {
     name: "Lucas B.",
     rating: 5,
-    comment: "Plus de 60€ d'économies par mois, c'est incroyable !",
-    avatar: "👨‍🚀"
+    comment: "Plus de 60€ d'économies par mois, c'est incroyable !"
   }
 ];
 
@@ -175,7 +173,7 @@ export default function SpliiitLanding() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative flex items-center justify-center bg-whitetext-center">
+      <section className="relative flex items-center justify-center bg-white text-center">
         <div className=" mx-auto px-6 grid items-center pt-10">
           {/* Left Content */}
           <div className="space-y-8 gap-12 text-center p-5">
@@ -183,7 +181,7 @@ export default function SpliiitLanding() {
             {/* Main Heading with Slot Machine Effect */}
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-spliiit-black leading-tight">
-                
+
                 <CasinoScroll />
               </h1>
               <p className="text-xl text-gray-600 max-w-lg">
@@ -192,15 +190,15 @@ export default function SpliiitLanding() {
 
             </div>
           </div>
-          </div>
+        </div>
       </section>
 
-    <Avatars />
-    
-    <section>
-      <AbonnementSlider />
-    </section>
-    
+      <Avatars />
+
+      <section>
+        <AbonnementSlider />
+      </section>
+
       {/* Section Proposer/Rejoindre + Simulateur */}
       <section className="py-10">
         <div className="max-w-6xl mx-auto px-6">
@@ -210,31 +208,27 @@ export default function SpliiitLanding() {
 
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {/* Proposez une place */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg card-hover">
-              <div className="text-4xl mb-4">
-                <Image src={groupe} alt="Groupe de personnages Spliiit" width={400} height={300} className="w-full h-auto" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Proposez une place</h3>
+            <div className="bg-[#F5F5F5] p-8 rounded-2xl shadow-lg">
+              <p>Propriétaires</p>
+              <h3 className="text-[50px] font-bold text-gray-800 mb-4">Proposez vos places vacantes</h3>
               <p className="text-gray-600 mb-6">
-                Vous avez une place libre ? Proposez-la en 2 clics et gagnez de l'argent.
+                Nous sécurisons les paiments de vos co-abonnés.
               </p>
-              <button className="bg-spliiit-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-spliiit-white hover:text-black hover:border hover:border-black transition-all duration-300 transform hover:scale-105">
-                Proposer une place
-              </button>
-            </div>
-
-            {/* Rejoignez un abonnement */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg card-hover">
               <div className="text-4xl mb-4">
                 <Image src={rejoindre} alt="Groupe de personnages Spliiit" width={400} height={300} className="w-full h-auto" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Rejoignez un abonnement</h3>
+            </div>
+
+            {/* Rejoignez un abonnement */}
+            <div className="bg-[#F5F5F5] p-8 rounded-2xl shadow-lg">
+              <p>Co-abonnés</p>
+              <h3 className="text-[50px] font-bold text-gray-800 mb-4">Rejoignez un abonnement</h3>
               <p className="text-gray-600 mb-6">
-                Trouvez une offre qui vous correspond et économisez dès aujourd'hui.
+                Accédez aux abonnements et profitez sans engagement.
               </p>
-              <button className="bg-spliiit-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-spliiit-white hover:text-black hover:border hover:border-black transition-all duration-300 transform hover:scale-105">
-                Voir les offres disponibles
-              </button>
+              <div className="text-4xl mb-4">
+                <Image src={rejoindre} alt="Groupe de personnages Spliiit" width={400} height={300} className="w-full h-auto" />
+              </div>
             </div>
           </div>
 
@@ -242,10 +236,43 @@ export default function SpliiitLanding() {
           <Simulator />
         </div>
       </section>
+      {/*réassurance*/}
+      <section className='p-10 lg:w-[1100px] m-auto'>
+        <div className="flex flex-col lg:flex-row gap-5">
+          <section className="p-10 lg:w-[1100px] m-auto">
+            <div className="flex flex-col lg:flex-row gap-5">
+              <div className="rounded-lg bg-[#bdb1ff] p-5 lg:w-1/3 relative lg:h-[450px] h-[350px] overflow-hidden">
+                <p className="text-[24px]">Partagez un abonnement</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="absolute bottom-0 right-0 w-1/2 h-1/2 z-10">
+                  <Image src={musique} alt="Groupe de personnages Spliiit" fill style={{ objectFit: 'contain' }} />
+                </div>
+              </div>
+
+              <div className="rounded-lg bg-[#fdf4d9] p-5 lg:w-1/3 relative lg:h-[450px] h-[350px] overflow-hidden">
+                <p className="text-[24px]">Diversité d'abonnement</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="absolute bottom-0 right-0 w-1/2 h-1/2 z-10">
+                  <Image src={vod} alt="Groupe de personnages Spliiit" fill style={{ objectFit: 'contain' }} />
+                </div>
+              </div>
+
+              <div className="rounded-lg bg-[#9ed1c4] p-5 lg:w-1/3 relative lg:h-[450px] h-[350px] overflow-hidden">
+                <p className="text-[24px]">Économies sur vos abonnements</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div className="absolute bottom-0 right-0 w-1/2 h-1/2 z-10">
+                  <Image src={education} alt="Groupe de personnages Spliiit" fill style={{ objectFit: 'contain' }} />
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
       {/* Section OTP */}
       <OtpForm />
 
-      {/* Vidéo de présentation */}
+
+
 
       {/* Avis Google avec Swiper */}
       <section className="py-20 bg-white">
@@ -267,53 +294,7 @@ export default function SpliiitLanding() {
         </div>
       </section>
 
-      {/* Slider réassurance avec Swiper */}
-      <section className="py-10">
-        <div className=" mx-auto px-6">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
-            }}
-            className="reassurance-swiper"
-          >
-            {reassuranceItems.map((item, index) => {
-              const colorClassMap: Record<string, string> = {
-                'spliiit-green': 'bg-spliiit-green/20 text-spliiit-green',
-                'spliiit-brown': 'bg-spliiit-brown/20 text-spliiit-brown',
-                'spliiit-blue': 'bg-spliiit-blue/20 text-spliiit-blue',
-                'spliiit-yellow': 'bg-spliiit-yellow/20 text-spliiit-yellow'
-              };
-              const colorClasses = colorClassMap[item.color] || 'bg-gray-100 text-gray-600';
-
-              return (
-                <SwiperSlide key={index}>
-                  <div className="text-center p-6 card-hover bg-white rounded-xl">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center ${colorClasses.split(' ')[0]}`}>
-                      <item.icon className={`w-8 h-8 ${colorClasses.split(' ')[1]}`} />
-                    </div>
-                    <h3 className="text-xl font-semibold text-spliiit-black mb-2">{item.text}</h3>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
-      </section>
+      
 
       {/* FAQ */}
       <section className="py-20 bg-white">
