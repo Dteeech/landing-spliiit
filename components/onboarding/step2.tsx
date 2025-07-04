@@ -22,7 +22,7 @@ export default function Step2({ onNext, onBack }: Step2Props) {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-[#f4e8e7] text-black">
+    <div className="flex flex-col items-center justify-center h-full px-4 bg-[#f4e8e7] text-black">
       <div className="w-full max-w-md mx-auto text-center">
         <h2 className="text-xl font-semibold mb-4">
           À un clic des économies !
@@ -44,7 +44,7 @@ export default function Step2({ onNext, onBack }: Step2Props) {
               type="checkbox"
               checked={newsletter}
               onChange={() => setNewsletter(!newsletter)}
-              className="mt-1 accent-purple-600"
+              className="mt-1 accent-mauve"
             />
             <span>Je souhaite recevoir les newsletters et offres promotionnelles de Spliit</span>
           </label>
@@ -54,7 +54,7 @@ export default function Step2({ onNext, onBack }: Step2Props) {
               type="checkbox"
               checked={acceptCGU}
               onChange={() => setAcceptCGU(!acceptCGU)}
-              className="mt-1 accent-purple-600"
+              className="mt-1 accent-mauve"
             />
             <span>
               En vous inscrivant, vous reconnaissez avoir pris connaissance et acceptez nos{" "}
@@ -91,7 +91,7 @@ export default function Step2({ onNext, onBack }: Step2Props) {
             onClick={handleContinue}
             className={`px-8 py-2 rounded-full font-semibold transition ${
               acceptCGU
-                ? "bg-purple-600 text-white hover:bg-purple-700"
+                ? "bg-mauve text-white hover:bg-mauve"
                 : "bg-gray-300 text-black cursor-not-allowed"
             }`}
           >

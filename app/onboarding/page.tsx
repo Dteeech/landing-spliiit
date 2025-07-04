@@ -20,16 +20,15 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f4e8e7] overflow-x-hidden">
+    <div className="h-screen flex flex-col bg-[#f4e8e7] overflow-hidden">
       <ProgressBar currentStep={step} totalSteps={3} />
 
-      <div className="flex-grow px-4 py-8">
+      <div className="flex-grow px-4 py-6 overflow-y-auto">
         {step === 1 && <Step1 onNext={handleNext} />}
         {step === 2 && <Step2 onNext={handleNext} onBack={handleBack} />}
         {step === 3 && <Step3 onBack={handleBack} />}
-        {/* {step === 4 && <Step4 onNext={handleNext} onBack={handleBack} />}
-        {step === 5 && <Step5 onBack={handleBack} />} */}
       </div>
     </div>
   )
 }
+

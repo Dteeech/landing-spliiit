@@ -8,7 +8,7 @@ import { useWindowSize } from "@react-hook/window-size"
 import { useRouter } from "next/navigation"
 
 type Step3Props = {
-  onBack: () => void // On le garde dans les props si jamais tu veux l'utiliser ailleurs
+  onBack: () => void
 }
 
 export default function Step3({ onBack }: Step3Props) {
@@ -22,7 +22,6 @@ export default function Step3({ onBack }: Step3Props) {
       setLoading(false)
       setShowConfetti(true)
 
-      // ⏳ Après 5 secondes, rediriger vers l'app Spliiit
       setTimeout(() => {
         setShowConfetti(false)
         router.push("https://app.spliiit.com/marketplace")
@@ -33,10 +32,10 @@ export default function Step3({ onBack }: Step3Props) {
   }, [router])
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4 bg-[#f4e8e7] relative">
+    <div className="flex flex-col items-center justify-center min-h-full px-4 bg-[#f4e8e7] relative overflow-hidden">
       {loading ? (
         <div className="flex flex-col items-center gap-4">
-          <Loader2 className="animate-spin h-10 w-10 text-purple-600" />
+          <Loader2 className="animate-spin h-10 w-10 text-mauve" />
           <p className="text-lg font-medium text-gray-800">Validation de votre inscription...</p>
         </div>
       ) : (
@@ -46,12 +45,19 @@ export default function Step3({ onBack }: Step3Props) {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          {showConfetti && <Confetti width={width} height={height} />}
-          <h2 className="text-2xl font-bold text-purple-700 mb-4">🎉 Félicitations !</h2>
-          <p className="text-gray-800 text-lg mb-6">
-            Votre inscription a bien été validée. Bienvenue chez Spliit 💜
+          {showConfetti && (
+            <div className="absolute inset-0 z-10 pointer-events-none">
+              <Confetti width={width} height={height} />
+            </div>
+          )}
+         <h2 className="text-2xl font-bold text-mauve mb-4 z-20 relative">
+  Félicitations{" "}
+  <span className="text-black animate-fade-in-up">spliiiter42</span> !
+</h2>
+          <p className="text-gray-800 text-lg mb-6 z-20 relative">
+            Votre inscription a bien été validée. Bienvenue chez Spliiit 💜
           </p>
-          <p className="text-sm text-gray-600">Redirection en cours...</p>
+          <p className="text-sm text-gray-700 z-20 relative">Redirection en cours...</p>
         </motion.div>
       )}
     </div>

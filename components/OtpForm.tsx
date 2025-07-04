@@ -2,25 +2,42 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
+import { toast } from "sonner"
+import { Loader2 } from "lucide-react"
+
+function formatPhoneNumber(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 10)
+  return digits.replace(/(\d{2})(?=\d)/g, "$1 ").trim()
+}
+
+function isValidFrenchMobile(number: string): boolean {
+  const digits = number.replace(/\D/g, "")
+  return /^0[67]\d{8}$/.test(digits)
+}
 
 function OtpForm() {
   const router = useRouter()
 
   const [countryCode, setCountryCode] = useState("+33")
   const [phoneNumber, setPhoneNumber] = useState("")
+  const [isSending, setIsSending] = useState(false)
 
   const handleSendCode = () => {
-    const fullNumber = countryCode + phoneNumber.replace(/\s/g, "")
+    const formatted = phoneNumber.replace(/\D/g, "")
 
-    if (fullNumber.length < 10) {
-      alert("Numéro invalide")
+    if (!isValidFrenchMobile(phoneNumber)) {
+      toast.error("Numéro invalide. Veuillez entrer un numéro valide.")
       return
     }
 
-    // 🔜 plus tard ici tu pourras appeler un endpoint pour envoyer un vrai code OTP
+    const fullNumber = countryCode + formatted
 
-    // 🧭 Redirection vers la première étape de l'onboarding
-    router.push("/onboarding")
+    setIsSending(true)
+    setTimeout(() => {
+      setIsSending(false)
+      toast.success(`Code envoyé à ${fullNumber}`)
+      router.push("/onboarding")
+    }, 1500)
   }
 
   return (
@@ -35,6 +52,7 @@ function OtpForm() {
               value={countryCode}
               onChange={(e) => setCountryCode(e.target.value)}
               className="bg-white border border-gray-300 rounded-l-lg px-3 py-3 focus:outline-none focus:ring-2 focus:ring-spliiit-brown transition-all"
+              disabled={isSending}
             >
               <option value="+33">🇫🇷 +33</option>
               <option value="+32">🇧🇪 +32</option>
@@ -42,18 +60,38 @@ function OtpForm() {
             </select>
             <input
               type="tel"
-              placeholder="Numéro de téléphone"
+              placeholder="06 12 34 56 78"
               value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              onChange={(e) => setPhoneNumber(formatPhoneNumber(e.target.value))}
               className="flex-1 border border-gray-300 rounded-r-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-spliiit-brown transition-all"
+              disabled={isSending}
+              inputMode="numeric"
             />
           </div>
+
           <button
             onClick={handleSendCode}
-            className="w-full bg-gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+            className="w-full bg-gradient-primary text-white py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center"
+            disabled={isSending}
           >
-            Recevoir mon code
+            {isSending ? (
+              <>
+                <Loader2 className="animate-spin mr-2 h-5 w-5" />
+                Envoi du code...
+              </>
+            ) : (
+              "Recevoir mon code"
+            )}
           </button>
+          <p className="mt-4 text-sm text-gray-500">
+            <a
+            href="#"
+            onClick={(e) => e.preventDefault()}
+            className="underline hover:text-spliiit-purple transition"
+          >
+    S'inscrire autrement
+  </a>
+</p>
         </div>
       </div>
     </section>
