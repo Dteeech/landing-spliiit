@@ -8,7 +8,7 @@ import persoVr from '@/public/gif/vr.webp'
 
 export default function Avatars() {
   return (
-    <div className="flex justify-center items-center gap-4 flex-wrap p-5">
+    <div className="flex justify-center items-center gap-4 flex-wrap p-5 mb-5">
       <div className="w-44 h-44 rounded-full bg-gray-200 overflow-hidden flex justify-center items-center ">
          <Image src={mamie} alt="avatar" width={44} height={44} className="w-full h-full object-cover" />
       </div>

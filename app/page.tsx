@@ -186,7 +186,7 @@ export default function SpliiitLanding() {
 
                 <CasinoScroll />
               </h1>
-              <p className="text-xl text-gray-600 max-w-lg">
+              <p className="text-xl text-gray-600 max-w-lg py-5">
                 Économisez sur vos abonnements en rejoignant la plus grande communauté de co-abonnement.
               </p>
 

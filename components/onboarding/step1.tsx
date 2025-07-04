@@ -11,6 +11,7 @@ import {
 import { toast } from "sonner"
 import clsx from "clsx"
 import { Loader2 } from "lucide-react"
+import persoOtp from "/images/step1.png"
 
 type Step1Props = {
   onNext: () => void
@@ -56,7 +57,7 @@ export default function Step1({ onNext }: Step1Props) {
         </p>
 
         <Image
-          src="/images/step1.png"
+          src={persoOtp}
           alt="Personnages OTP"
           width={280}
           height={220}

@@ -3,7 +3,8 @@
 import Image from "next/image"
 import { useState } from "react"
 import { toast } from "sonner"
-
+import persoStep2 from "/images/step2.png"
+import svg from "/icons/arrow-back.svg"
 type Step2Props = {
   onNext: () => void
   onBack: () => void
@@ -30,7 +31,7 @@ export default function Step2({ onNext, onBack }: Step2Props) {
 
         <div className="-mt-4 mb-4">
           <Image
-            src="/images/step2.png"
+            src={persoStep2}
             alt="Illustration fauteuils"
             width={280}
             height={280}
@@ -80,7 +81,7 @@ export default function Step2({ onNext, onBack }: Step2Props) {
             className="rounded-full w-10 h-10 bg-[#d1c4ff] flex items-center justify-center text-xl"
           >
             <Image
-              src="/icons/arrow-back.svg"
+              src={svg}
               alt="Retour"
               width={15}
               height={15}
