@@ -74,7 +74,7 @@ export default function InfiniteDoubleSlider() {
           <SwiperSlide key={`top-${index}`} style={{ width: 'auto' }} className="bg-white p-4 rounded-lg shadow-md">
             <div className=" mx-2 min-w-[300px] py-10">
               <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">{review.avatar}</span>
+                
                 <div>
                   <div className="font-semibold">{review.name}</div>
                   <div className="text-yellow-400">{'★'.repeat(review.rating)}</div>
@@ -99,7 +99,7 @@ export default function InfiniteDoubleSlider() {
           <SwiperSlide key={`top-${index}`} style={{ width: 'auto' }} className="bg-white p-4 rounded-lg shadow-md" >
             <div className="mx-2 min-w-[300px] my-10">
               <div className="flex items-center mb-2">
-                <span className="text-2xl mr-2">{review.avatar}</span>
+                
                 <div>
                   <div className="font-semibold">{review.name}</div>
                   <div className="text-yellow-400">{'★'.repeat(review.rating)}</div>
