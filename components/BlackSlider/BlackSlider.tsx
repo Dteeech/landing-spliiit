@@ -10,14 +10,14 @@ import SpotifyCard from './cards/SpotifyCard';
 
 const AbonnementSlider = () => {
   return (
-    <div className="bg-black rounded-2xl p-6 m-auto flex align-center justify-center mx-[45px]">
-      <div className="mb-6 w-1/2 p-5">
+    <div className="bg-black rounded-2xl p-6 m-auto flex flex-col lg:flex-row align-center justify-center mx-[45px]">
+      <div className="mb-6 lg:w-1/2 p-5">
         <h2 className="text-white text-3xl font-bold mb-4">Plus de 300 abonnements partageables</h2>
         <button className="bg-white text-black rounded-full px-4 py-2 font-semibold">
           Voir tous les abonnements
         </button>
       </div>
-      <div className='w-2/3 p-5'>
+      <div className='lg:w-2/3 lg:p-5'>
 
         <Swiper
           modules={[Autoplay, FreeMode]}
