@@ -306,7 +306,7 @@ export default function SpliiitLanding() {
             Prêt à économiser sur vos abonnements ?
           </h2>
           <p className="text-xl mb-8 text-gray-200">
-            Rejoignez plus de 50,000 utilisateurs qui économisent déjà avec Spliiit
+            Rejoignez plus de 917 549 utilisateurs qui économisent déjà avec Spliiit
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
@@ -323,15 +323,15 @@ export default function SpliiitLanding() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2">50K+</div>
+              <div className="text-3xl font-bold mb-2">900K+</div>
               <div className="text-gray-300">Utilisateurs</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2">€2M+</div>
+              <div className="text-3xl font-bold mb-2">€13M+</div>
               <div className="text-gray-300">Économisés</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold mb-2">15+</div>
+              <div className="text-3xl font-bold mb-2">100+</div>
               <div className="text-gray-300">Services</div>
             </div>
             <div className="text-center">
