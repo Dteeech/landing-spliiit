@@ -11,7 +11,7 @@ import {
 import { toast } from "sonner"
 import clsx from "clsx"
 import { Loader2 } from "lucide-react"
-import persoOtp from "/images/step1.png"
+import persoOtp from "a/public/images/step1.png"
 
 type Step1Props = {
   onNext: () => void
