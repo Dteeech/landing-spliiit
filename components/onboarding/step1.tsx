@@ -84,7 +84,6 @@ export default function Step1({ onNext }: Step1Props) {
                   <InputOTPSlot index={1} />
                   <InputOTPSlot index={2} />
                 </InputOTPGroup>
-                <InputOTPSeparator />
                 <InputOTPGroup>
                   <InputOTPSlot index={3} />
                   <InputOTPSlot index={4} />
