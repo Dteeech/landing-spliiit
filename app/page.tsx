@@ -183,7 +183,7 @@ export default function SpliiitLanding() {
             {/* Main Heading with Slot Machine Effect */}
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-spliiit-black leading-tight">
-                
+
                 <CasinoScroll />
               </h1>
               <p className="text-xl text-gray-600 max-w-lg">
@@ -192,15 +192,15 @@ export default function SpliiitLanding() {
 
             </div>
           </div>
-          </div>
+        </div>
       </section>
 
-    <Avatars />
-    
-    <section>
-      <AbonnementSlider />
-    </section>
-    
+      <Avatars />
+
+      <section>
+        <AbonnementSlider />
+      </section>
+
       {/* Section Proposer/Rejoindre + Simulateur */}
       <section className="py-10">
         <div className="max-w-6xl mx-auto px-6">
@@ -264,54 +264,6 @@ export default function SpliiitLanding() {
           </div>
 
           <InfiniteDoubleSlider />
-        </div>
-      </section>
-
-      {/* Slider réassurance avec Swiper */}
-      <section className="py-10">
-        <div className=" mx-auto px-6">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{
-              delay: 4000,
-              disableOnInteraction: false,
-            }}
-            breakpoints={{
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 4,
-              },
-            }}
-            className="reassurance-swiper"
-          >
-            {reassuranceItems.map((item, index) => {
-              const colorClassMap: Record<string, string> = {
-                'spliiit-green': 'bg-spliiit-green/20 text-spliiit-green',
-                'spliiit-brown': 'bg-spliiit-brown/20 text-spliiit-brown',
-                'spliiit-blue': 'bg-spliiit-blue/20 text-spliiit-blue',
-                'spliiit-yellow': 'bg-spliiit-yellow/20 text-spliiit-yellow'
-              };
-              const colorClasses = colorClassMap[item.color] || 'bg-gray-100 text-gray-600';
-
-              return (
-                <SwiperSlide key={index}>
-                  <div className="text-center p-6 card-hover bg-white rounded-xl">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center ${colorClasses.split(' ')[0]}`}>
-                      <item.icon className={`w-8 h-8 ${colorClasses.split(' ')[1]}`} />
-                    </div>
-                    <h3 className="text-xl font-semibold text-spliiit-black mb-2">{item.text}</h3>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
         </div>
       </section>
 
