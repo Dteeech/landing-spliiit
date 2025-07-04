@@ -54,7 +54,7 @@ export default function SlotMachine() {
     "NordVPN",
     "Nintendo",
     "Netflix",
-    "vos abonnements !"
+    "vos abonnements"
   ];
   const itemHeight = 125; // hauteur d'une ligne sans marge
   const gap = 16; // espace entre les mots (en px)
